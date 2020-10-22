@@ -1,0 +1,15 @@
+Python Packages:
+  asyncio
+  alpaca_trade_api
+  numpy
+  pandas
+  argparse
+
+Other Requirments:
+  -Input alpaca keys into the config.py file
+
+
+To Run:
+  python3 simple_scalper.py --symbol [symbol] --trailing_stop
+
+  (to add multiple ticker symbols add another "--symbol" flag and another ticker)
