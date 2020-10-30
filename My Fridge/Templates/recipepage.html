@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body bgcolor="#E9EEED">
+    <div>
+
+    <table bgcolor="black" width="1400" style="font-family: 'Amatic SC', cursive;color:black;">
+      <th><h2><a href=/fridge ></a></h2>
+              {% if user %}
+              <h2><a href="{{logout_url}}">Logout</a></h2>
+              {% else %}
+              <h2><a href="{{login_url}}"><center>Login</center></a></h2>
+              {% endif %} <th>
+    <th><h2> <a href=/ >Home</a></h2></th>
+    <th><h2> <a href=/fridge >Fridge</a></h2></th>
+    <th><h2> <a href=/shopping_list >Shopping List</a></h2></th>
+    <th><h2> <a href=/recipe >Recipes</a></h2><th>
+    <th><h2> <a href=/about >About</a></h2></th>
+
+    </table>
+
+<center><h1 style="font-family: 'Amatic SC', cursive; color:black; font-size:55px;">Recipes</h1></center>
+
+
+
+    </div>
+{% if user %}
+
+<table>
+  <tr>
+    {% if recipes_list %}
+    <th style="font-family: 'Amatic SC', cursive; color:black; font-size:35px;">Here are the recipes that you can make:</th>
+
+    {% endif %}
+  </tr>
+  {% if recipes_list %}
+  {% for each_recipe in recipes_list %}
+
+  <tr>
+    <td style="font-family: 'Amatic SC', cursive; color: black; font-size:42px;"><a style= "color: black" href='/individual_recipe_page?id={{each_recipe["id"]}}'>{{each_recipe["name"]}}</a></td>
+    <td style="color: black;"><img src="{{each_recipe['image_url']}}"></td>
+    <td>
+    <h4  style="font-family: 'Amatic SC', cursive; color: black; font-size:35px">  Items Needed: </h4><br>
+      <h6  style="font-family: 'Amatic SC', cursive; color: black; font-size:30px"> {% for x in each_recipe["ingredients needed"]%}
+      {{x}} <br>{% endfor %}</td></h6>
+
+  </tr>
+
+  {% endfor %}
+  {% else %}
+  <h1 style= "font-family: 'Amatic SC', cursive; color:black;text-align:center; font-size:50px;" > Add items to your fridge to see recipes </h1>
+  {% endif %}
+  {% else %}
+  <h2 style="font-family: 'Amatic SC', cursive; color:black;text-align:center; font-size:50px;"> Please Log in to View Recipes</h2>
+  {% endif %}
+</table>
+
+
+<!--h2 style="color:white;"> Recommended Recipes </h2>
+
+<h2 style="font-family:Georgia;color:black;font-style:italic; font-size: 40px">Recommended Recipes</h2>
+<ul style="list-style-type:circle; font-family: Georgia; font-size: 20px">
+
+  <li>Recipe one:  </li>
+  <li>Recipe two: </li>
+  <li>Recipe three: </li>
+  <li>Recipe four: </li>
+  <li>Recipe five: </li>
+</ul-->
+
+
+
+  </body>
+</html>

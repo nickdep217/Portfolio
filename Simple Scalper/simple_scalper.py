@@ -321,10 +321,6 @@ class Context():
         elif event == 'rejected':
             print("order was rejected")
 
-
-
-
-
 """
     def compute_signal(self):
         self.last_signal = self.current_signal
