@@ -16,4 +16,4 @@ Simple_scalper:
     -to add multiple ticker symbols add another "--symbol" flag and another ticker
     -Make sure to input alpaca keys into the config.py file
     -Make sure all packages specified in requirments.txt are installed
-    -I recommend running it on a server or something of that nature as you will get slightly faster quotes and will have less connection errors.
+    -I recommend running it on a server rather than a local computer as you will get slightly faster quotes and will have less connection errors.
